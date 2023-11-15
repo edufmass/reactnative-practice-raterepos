@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  app:
+    build:
+      args:
+        user: node
+        uid: 1000
+        gid: 1000
+      context: .
+      dockerfile: Node.dockerfile
+      target: 'dev-stage'
+    ports:
+      - '3000:3000'
+      - '8081:8081'
+    container_name: reactnative-raterepos
+    restart: always
+    #command: /bin/sh -c "chown -R 1000:1000 /app && cd /app && npx create-expo-app . && npx expo start" #first time
+    #command: /bin/sh -c "chown -R 1000:1000 /app && cd /app && npm install && npx expo start"
+    command: /bin/sh -c "chown -R 1000:1000 /app && cd /app && npm install && npm start"
+    volumes:
+      - './app:/app'
+      - '~/Android/Sdk:/home/node/Android/sdk'
+      - '~/Android/Sdk/emulator:/home/node/Android/sdk/emulator'
+      - '~/Android/Sdk/platform-tools:/home/node/Android/sdk/platform-tools'
+    networks:
+      - reactnativetest
+
+networks:
+  reactnativetest:
+      name: reactnativetest_network
