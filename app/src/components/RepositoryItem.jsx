@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import StyledText from "./StyledText";
+import RepositoryItemStats from "./RepositoryItemStats";
 
 const RepositoryItem = (props) => (
     <View
@@ -10,10 +11,7 @@ const RepositoryItem = (props) => (
         <StyledText fontSize='subheading' fontWeight='bold' >{props.fullName}</StyledText>
         <StyledText>{props.description}</StyledText>
         <StyledText>{props.language}</StyledText>
-        <StyledText>Stars: {props.stargazersCount}</StyledText>
-        <StyledText>Forks: {props.forksCount}</StyledText>
-        <StyledText>Review: {props.reviewCount}</StyledText>
-        <StyledText>Rating: {props.ratingAverage}</StyledText>
+        <RepositoryItemStats {...props} />
     </View>
 );
 
