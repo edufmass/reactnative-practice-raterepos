@@ -33,7 +33,8 @@ export default function StyledText({children, color, fontSize, fontWeight, textA
         color === 'secondary' && styles.colorSecondary,
         fontSize === 'subheading' && styles.subheading,
         fontWeight === 'bold' && styles.bold,
-        textAlign === 'center' && styles.textAlignCenter
+        textAlign === 'center' && styles.textAlignCenter,
+        style
     ];
 
     return (
