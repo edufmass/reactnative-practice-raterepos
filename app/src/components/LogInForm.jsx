@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleSheet } from "react-native";
 import { useField } from "formik";
 import StyledText from "./StyledText";
 import StyledTextInput from "./StyledTextInput";
@@ -20,3 +21,15 @@ const FormikInputValue = ({ name, ...props }) => {
 }
 
 export default FormikInputValue;
+
+const styles = StyleSheet.create({
+    error: {
+        color: 'red',
+        fontSize: 12,
+        marginBottom: 20,
+        marginTop: -5
+    },
+    form: {
+        margin: 12
+    }
+})
