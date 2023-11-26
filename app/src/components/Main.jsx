@@ -1,8 +1,9 @@
 import React from "react";
-import { Platform, Text, View } from "react-native";
+import { View } from "react-native";
 import { Route, Routes } from "react-router-native";
 import AppBar from './AppBar'; // without ext to choose platform
 import RepositoryList from "./RepositoryList";
+import LoginPage from "../pages/Login";
 
 /*
 const AppBar = Platform.select({
@@ -17,7 +18,7 @@ const Main = () => {
             <AppBar />
             <Routes>
                 <Route path='/' element={<RepositoryList />} />
-                <Route path='/login' element={<Text>ToDo: Login</Text>} />
+                <Route path='/login' element={<LoginPage />} />
             </Routes>
         </View>
     );
