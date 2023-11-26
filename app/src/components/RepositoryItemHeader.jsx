@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, Platform, StyleSheet, View } from "react-native";
 import StyledText from "./StyledText";
 import theme from "../theme";
 
@@ -35,7 +35,13 @@ const styles = StyleSheet.create({
         padding: 4,
         marginVertical: 4, // marginTop: 4, marginBottom: 4,
         color: theme.colors.white,
-        backgroundColor: theme.colors.primary,
+        //backgroundColor: theme.colors.primary,
+        //backgroundColor: Platform.OS === 'android' ? 'red' : '#09f',
+        backgroundColor: Platform.select({
+           android: theme.colors.primary,
+           ios: 'orange',
+           default: '#09f'
+        }),
         alignSelf: 'flex-start',
         borderRadius: 4,
         overflow: 'hidden'

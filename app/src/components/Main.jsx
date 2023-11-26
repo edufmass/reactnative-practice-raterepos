@@ -1,9 +1,15 @@
 import React from "react";
-import Constants from 'expo-constants';
-import {Text, View} from "react-native";
-import {Route, Router, Routes} from "react-router-native";
+import { Platform, Text, View } from "react-native";
+import { Route, Routes } from "react-router-native";
+import AppBar from './AppBar'; // without ext to choose platform
 import RepositoryList from "./RepositoryList";
-import AppBar from "./AppBar";
+
+/*
+const AppBar = Platform.select({
+    ios: () => require('./IosAppBar.jsx').default,
+    default: () => require('./AppBar.jsx').default
+})();
+*/
 
 const Main = () => {
     return (
